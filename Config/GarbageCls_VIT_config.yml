@@ -1,0 +1,37 @@
+data_configuration:
+  data_folder: "/home/ztp/workspace/dataset/garbage_classfication_dataset"
+  resize:
+    - 128
+    - 128
+model_configuration:
+  in_channel: 3
+  output_channel: 2
+  image_size:
+    - 128
+    - 128
+  patch_size:
+    - 16
+    - 16
+  D: 768
+  num_layers: 12
+  MLP_hidden: 3072
+  num_head: 12
+  head_channel: 64
+  dropout: 0.1
+train_configuration:
+  experiment_folder: "./models/GarbageCls_VIT_models"
+  model_name: "VIT"
+  experiment_result_folder: "./experiment_result/GarbageCls_VIT_result"
+  experiment_result_file: "experiment_result.pkl"
+  num_class: 2
+  batch_size: 128
+  base_lr: 0.0001
+  epochs: 500
+  epsilon: 1.0e-8
+  lr_decay_ratio: 0.1
+  steps:
+  - 300
+  - 400
+  - 450
+  sleep_time: 10
+
